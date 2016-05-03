@@ -4,6 +4,18 @@ body {
     font-weight: 100;
 }
 
+header {
+    position: fixed;
+}
+
+div.collage {
+    text-align: center;
+    padding-top: 80px;
+}
+
+div.mdl-layout__header-row {
+    padding-left: 0;
+}
 
 div a {
     text-decoration: none;
@@ -37,3 +49,17 @@ ul li ul li {
 
 ul li ul li a {display:block !important;}
 ul li ul li:hover {background: #666;}
+
+div.login {
+    text-align: center;
+}
+
+label.mdl-textfield__label {
+    font-weight: normal;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+

@@ -5,6 +5,17 @@ class App < Sinatra::Base
   	erb :index
   end
 
+  get '/admin' do
+    @admins = Admin.all
+    erb :login
+  end
+
+  post 'admin/register' do
+    username = params['username']
+    password = params['password']
+    login = Admin.create(username: username, password: password)
+  end
+
 
   post '/post/create' do
   title = params['title']
