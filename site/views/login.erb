@@ -1,23 +1,35 @@
-<div class="login">
-  <form action="#">
+<div class="mdl-tabs mdl-js-tabs" id="login">
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">LOG IN</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <div class="mdl-tabs__tab-bar">
+      <a href="#login" class="mdl-tabs__tab">LOG IN</a>
+      <a href="#register" class="mdl-tabs__tab">REGISTER</a>
+    </div>
+  <form action="/admin/login" method="post">
     <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="username">
       <label class="mdl-textfield__label" for="username">Username</label>
     </div>
-  </form>
-  <form action="#">
     <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="password" id="password">
       <label class="mdl-textfield__label" for="password">Password</label>
     </div>
+    <div class="mdl-tabs__panel is-active" id="login">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Log In
+      </button>
+    </div>
   </form>
-  <form action="/admin/login" method="post">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      Log In
-    </button>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      Register
-    </button>
-  </form>
+    <div class="mdl-tabs__panel" id="register">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Register
+      </button>
+    </div>
+  </div>
 </div>
+</div>
+
 

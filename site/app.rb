@@ -10,12 +10,16 @@ class App < Sinatra::Base
     erb :login
   end
 
-  post 'admin/register' do
-    username = params['username']
-    password = params['password']
-    login = Admin.create(username: username, password: password)
-  end
+  post '/admin/login' do
+    admin = Admin.first(username: params['username'])
+    if admin && admin.password == params['password']
+      session[:admin_id] = admin.id
+      redirect '/'
+    end
 
+    redirect back
+
+  end
 
   post '/post/create' do
   title = params['title']
