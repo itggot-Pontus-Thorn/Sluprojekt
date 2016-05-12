@@ -6,19 +6,31 @@ class App < Sinatra::Base
   end
 
   get '/admin' do
-    @admins = Admin.all
     erb :login
+  end
+
+  get '/adminrights' do
+      if session[:admin_id]
+        erb :admin
+      else
+        redirect '/admin'
+      end
   end
 
   post '/admin/login' do
     admin = Admin.first(username: params['username'])
     if admin && admin.password == params['password']
       session[:admin_id] = admin.id
-      redirect '/'
+      redirect '/adminrights'
     end
 
     redirect back
 
+  end
+
+  post '/admin/logout' do
+    session[:admin_id] = nil
+    redirect '/'
   end
 
   post '/post/create' do
