@@ -1,9 +1,11 @@
 <form action="/post/create" method="post" >
   <input type="text" name="title">
-  <br>
+  <h4>IMAGE</h4>
+  <button class="mdl-button mdl-js-button mdl-button--fab">
+    <i class="material-icons">add</i>
+  </button>
   <textarea name="content"></textarea>
-  <br>
-  <button type="submit">Send message!</button>
+  <button type="submit">POST!</button>
 </form>
 <% for post in @posts %>
     <div data-post-id="<%= post.id %>" class="post">

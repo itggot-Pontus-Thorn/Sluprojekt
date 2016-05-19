@@ -43,12 +43,21 @@
 
 <div class="collage">
   <img src="/img/collage.png">
+</div>
+
+<div id="post">
+  <% for post in @posts %>
+      <%= post.title %>
+  <% end %>
+  <p>COMMENT</p>
   <form action="/admin/logout" method="post">
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
     EDIT
   </button>
   </form>
+  <form action="/post/post" method="post">
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
     NEW
   </button>
+  </form>
 </div>
