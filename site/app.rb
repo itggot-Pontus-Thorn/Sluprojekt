@@ -12,6 +12,7 @@ class App < Sinatra::Base
 
   get '/adminrights' do
       if session[:admin_id]
+        @posts = Post.all
         erb :admin
       else
         redirect '/admin'
@@ -54,9 +55,9 @@ class App < Sinatra::Base
       title = params['title']
       content = params['content']
       Post.create(title: title, content: content, admin_id: session[:admin_id])
-      redirect "/"
+      redirect '/'
     else
-      redirect "/login"
+      redirect '/admin'
     end
   end
 

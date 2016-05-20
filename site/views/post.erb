@@ -8,11 +8,7 @@
   <button type="submit">POST!</button>
 </form>
 <% for post in @posts %>
-    <div data-post-id="<%= post.id %>" class="post">
-      <h3><%= post.title %></h3>
-      <p><%= post.content %></p>
-    </div>
     <form action="/post/<%= post.id %>/delete" method="post">
-      <button class="remove" data-post-id="<%= post.id %>" type="submit">Ta bort horan</button>
+      <button class="remove" data-post-id="<%= post.id %>" type="submit"> REMOVE POST</button>
     </form>
 <% end %>

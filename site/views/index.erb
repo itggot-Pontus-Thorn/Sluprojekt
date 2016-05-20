@@ -46,9 +46,9 @@
 </div>
 
 <div id="post">
-<% for post in @posts %>
-  <%= post.title %>
-<% end %>
-
+  <% for post in @posts %>
+      <h4><%= post.title %></h4>
+      <p id="content"><%= post.content %></p>
+      <p>COMMENT</p>
+  <% end %>
 </div>
-<p>COMMENT</p>
