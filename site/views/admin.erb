@@ -43,16 +43,22 @@
 
 <div class="collage">
   <img src="/img/collage.png">
-</div>
-
-<div id="post">
   <form action="/admin/logout" method="post">
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       LOG OUT
     </button>
   </form>
+</div>
+
+
+
   <% for post in @posts %>
       <div id="inlägg">
+        <form action="/post/<%= post.id %>/edit" method="post">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+          EDIT
+        </button>
+        </form>
       <form action="/post/post" method="post">
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           NEW
@@ -63,4 +69,3 @@
       <p>COMMENT</p>
       </div>
   <% end %>
-</div>

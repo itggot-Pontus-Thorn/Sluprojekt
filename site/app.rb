@@ -50,6 +50,15 @@ class App < Sinatra::Base
     end
   end
 
+  post '/post/:id/edit' do |post_id|
+    post = Post.get(post_id)
+    if post && session[:admin_id]
+      @posts = Post.all
+      erb :post
+    end
+
+  end
+
   post '/post/create' do
     if session[:admin_id]
       title = params['title']

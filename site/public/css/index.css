@@ -25,12 +25,9 @@ div.collage.mdl-button {
     right: 10px;
 }
 
-div#post {
-    text-align: center;
-}
-
 div#inlägg {
     padding-top: 80px;
+    text-align: center;
 }
 
 p#content {
