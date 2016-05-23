@@ -28,6 +28,14 @@ class App < Sinatra::Base
     end
   end
 
+  get '/post/:id/edit' do |post_id|
+    @post = Post.get(post_id)
+    if @post && session[:admin_id]
+      @posts = Post.all
+      erb :postedit
+    end
+  end
+
   post '/admin/login' do
     admin = Admin.first(username: params['username'])
     if admin && admin.password == params['password']
@@ -51,12 +59,23 @@ class App < Sinatra::Base
   end
 
   post '/post/:id/edit' do |post_id|
-    post = Post.get(post_id)
-    if post && session[:admin_id]
-      @posts = Post.all
-      erb :post
+    @post = Post.get(post_id)
+    if @post && session[:admin_id]
+      @post.update(title: params['title'], content: params['content'])
+      redirect '/adminrights'
     end
 
+  end
+
+
+  post '/post/:id/delete' do |post_id|
+    post = Post.get(post_id)
+    if post && session[:admin_id]
+      post.destroy
+      redirect '/adminrights'
+    else
+      status 404
+    end
   end
 
   post '/post/create' do
@@ -64,7 +83,7 @@ class App < Sinatra::Base
       title = params['title']
       content = params['content']
       Post.create(title: title, content: content, admin_id: session[:admin_id])
-      redirect '/'
+      redirect '/adminrights'
     else
       redirect '/admin'
     end

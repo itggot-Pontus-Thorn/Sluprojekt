@@ -5,10 +5,12 @@
     <i class="material-icons">add</i>
   </button>
   <textarea name="content"></textarea>
-  <button type="submit">POST!</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    POST
+  </button>
 </form>
 <% for post in @posts %>
     <form action="/post/<%= post.id %>/delete" method="post">
-      <button class="remove" data-post-id="<%= post.id %>" type="submit"> REMOVE POST</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-post-id="<%= post.id %>" type="submit"> REMOVE POST</button>
     </form>
 <% end %>

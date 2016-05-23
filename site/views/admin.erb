@@ -48,17 +48,22 @@
       LOG OUT
     </button>
   </form>
+  <form action="/post/post" method="post">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      NEW
+    </button>
+  </form>
 </div>
 
 
 
-  <% for post in @posts %>
-      <div id="inlägg">
-        <form action="/post/<%= post.id %>/edit" method="post">
+<% for post in @posts %>
+    <div id="inlägg">
+      <form action="/post/<%= post.id %>/edit" method="get">
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           EDIT
         </button>
-        </form>
+      </form>
       <form action="/post/post" method="post">
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           NEW
@@ -67,5 +72,5 @@
       <h4><%= post.title %></h4>
       <p id="content"><%= post.content %></p>
       <p>COMMENT</p>
-      </div>
-  <% end %>
+    </div>
+<% end %>
