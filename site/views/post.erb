@@ -9,8 +9,3 @@
     POST
   </button>
 </form>
-<% for post in @posts %>
-    <form action="/post/<%= post.id %>/delete" method="post">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-post-id="<%= post.id %>" type="submit"> REMOVE POST</button>
-    </form>
-<% end %>

@@ -2,7 +2,7 @@
   <header class="mdl-layout__header mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" id="home" href="/adminrights">HOME</a>
+        <a class="mdl-navigation__link" id="home" href="/home">HOME</a>
         <a class="mdl-navigation__link" id="about" href="/about">ABOUT</a>
         <ul>
           <li>
@@ -40,32 +40,4 @@
     </div>
   </header>
 </div>
-
-<div class="collage">
-  <img src="/img/collage.png">
-  <form action="/admin/logout" method="post">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      LOG OUT
-    </button>
-  </form>
-  <form action="/post/post" method="post">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      NEW
-    </button>
-  </form>
-</div>
-
-
-
-<% for post in @posts %>
-    <div id="inlägg">
-      <form action="/post/<%= post.id %>/edit" method="get">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-          EDIT
-        </button>
-      </form>
-      <h4><%= post.title %></h4>
-      <p id="content"><%= post.content %></p>
-      <p>COMMENT</p>
-    </div>
-<% end %>
+<p id="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus excepturi magnam minus pariatur quae sapiente tempore? Aut dolores eveniet maiores nobis, officia perferendis sint. Asperiores error ipsa laudantium odit!</p>

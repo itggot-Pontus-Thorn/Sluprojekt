@@ -5,12 +5,16 @@ body {
 }
 
 body * {
-    font-weight: 310 !important;
+    font-weight: 300 !important;
     font-family: 'Roboto', sans-serif;
 }
 
 header {
     position: fixed;
+}
+
+p#about {
+    padding-top: 80px;
 }
 
 div.collage {
@@ -78,15 +82,16 @@ ul li ul li:hover {
     background: #2c3e50;
 }
 
-label.mdl-textfield__label {
-    font-weight: normal;
+span {
+    font-weight: 400 !important;
 }
-
 .mdl-card {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+
 
 

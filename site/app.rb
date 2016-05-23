@@ -6,6 +6,10 @@ class App < Sinatra::Base
   	erb :index
   end
 
+  get '/about' do
+    erb :about
+  end
+
   get '/admin' do
     erb :login
   end
@@ -33,6 +37,14 @@ class App < Sinatra::Base
     if @post && session[:admin_id]
       @posts = Post.all
       erb :postedit
+    end
+  end
+
+  get '/home' do
+    if session[:admin_id]
+      redirect '/adminrights'
+    else
+      redirect '/'
     end
   end
 
