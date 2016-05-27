@@ -1,22 +1,17 @@
 <div>
   <form action="/post/<%= @post.id %>/edit" method="post">
-  <input type="text" name="title">
-  <h4>IMAGE</h4>
-  <button class="mdl-button mdl-js-button mdl-button--fab">
-    <i class="material-icons">add</i>
-  </button>
-  <textarea name="content"></textarea>
+  <input type="text" name="title" placeholder="TITLE">
+  <textarea name="content" placeholder="CONTENT"></textarea>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       EDIT
     </button>
   </form>
   <form action="/post/<%= @post.id %>/delete" method="post">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-post-id="<%= @post.id %>" type="submit">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" data-post-id="<%= @post.id %>" type="submit">
       REMOVE POST
     </button>
   </form>
   <h4><%= @post.title %></h4>
   <p id="content"><%= @post.content %></p>
-  <p>COMMENT</p>
 </div>
 

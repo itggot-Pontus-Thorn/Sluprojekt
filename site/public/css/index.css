@@ -29,17 +29,23 @@ div.collage.mdl-button {
     right: 10px;
 }
 
-div#inlägg {
-    padding-top: 80px;
+.inlägg {
+    padding-top: 110px;
+}
+
+.inlägg > h4,h6 {
     text-align: center;
 }
 
-p#content {
-    border: 1px solid black;
+.inlägg *, .inlägg > form > button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-div#post.mdl-button {
-
+.content {
+    height: 170px;
+    width: 650px;
 }
 
 div.mdl-layout__header-row {
@@ -85,13 +91,11 @@ ul li ul li:hover {
 span {
     font-weight: 400 !important;
 }
+
 .mdl-card {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
-
-
-
 

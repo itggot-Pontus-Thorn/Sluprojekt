@@ -7,7 +7,7 @@ class Seeder
 
 
   def self.admins
-    Admin.create(username: 'aids', password: 'hora')
+    Admin.create(username: 'admin', password: 'admin')
   end
 
 end

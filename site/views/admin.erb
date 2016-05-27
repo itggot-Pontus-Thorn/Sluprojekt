@@ -18,9 +18,9 @@
           <li>
             <a class="mdl-navigation__link" id="archive">ARCHIVE</a>
             <ul>
-              <li><a href="#">9/11 2016</a></li>
-              <li><a href="#">11/9 2016</a></li>
-              <li><a href="#">12/12 2015</a></li>
+              <li><a href="#">JULY 2016</a></li>
+              <li><a href="#">MAY 2016</a></li>
+              <li><a href="#">APRIL 2015</a></li>
             </ul>
           </li>
         </ul>
@@ -37,17 +37,17 @@
                  id="fixed-header-drawer-exp">
         </div>
       </div>
+      <form action="/admin/logout" method="post">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          LOG OUT
+        </button>
+      </form>
     </div>
   </header>
 </div>
 
 <div class="collage">
   <img src="/img/collage.png">
-  <form action="/admin/logout" method="post">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      LOG OUT
-    </button>
-  </form>
   <form action="/post/post" method="post">
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       NEW
@@ -57,15 +57,18 @@
 
 
 
-<% for post in @posts %>
-    <div id="inlägg">
+<% for post in @posts.sort_by{|p| p.created_at}.reverse%>
+    <div class="inlägg">
       <form action="/post/<%= post.id %>/edit" method="get">
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           EDIT
         </button>
       </form>
       <h4><%= post.title %></h4>
-      <p id="content"><%= post.content %></p>
-      <p>COMMENT</p>
+      <h6><%= post.category %></h6>
+      <p class="content"><%= post.content %></p>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        COMMENT
+      </button>
     </div>
 <% end %>

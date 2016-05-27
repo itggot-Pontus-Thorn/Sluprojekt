@@ -18,9 +18,9 @@
           <li>
             <a class="mdl-navigation__link" id="archive">ARCHIVE</a>
             <ul>
-              <li><a href="#">9/11 2016</a></li>
-              <li><a href="#">11/9 2016</a></li>
-              <li><a href="#">12/12 2015</a></li>
+              <li><a href="#">JULY 2016</a></li>
+              <li><a href="#">MAY 2016</a></li>
+              <li><a href="#">APRIL 2016</a></li>
             </ul>
           </li>
         </ul>
@@ -45,10 +45,13 @@
   <img src="/img/collage.png">
 </div>
 
-<div id="inlägg">
-  <% for post in @posts %>
+<div class="inlägg">
+  <% for post in @posts.sort_by{|p| p.created_at}.reverse%>
       <h4><%= post.title %></h4>
-      <p id="content"><%= post.content %></p>
-      <p>COMMENT</p>
+      <h6><%= post.category %></h6>
+      <p class="content"><%= post.content %></p>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        COMMENT
+      </button>
   <% end %>
 </div>
