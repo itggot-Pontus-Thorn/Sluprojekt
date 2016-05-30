@@ -14,6 +14,16 @@ class App < Sinatra::Base
     erb :login
   end
 
+  get '/adminrights?=:query' do |query|
+    #puts "\n\n" + query + "\n\n"
+    if session[:admin_id]
+      @posts = Post.all.select{|post| post.category.scan(/#{query}/i).length > 0}
+      erb :admin
+    else
+      redirect '/admin'
+    end
+  end
+
   get '/adminrights' do
       if session[:admin_id]
         @posts = Post.all
@@ -37,6 +47,19 @@ class App < Sinatra::Base
     if @post && session[:admin_id]
       @posts = Post.all
       erb :postedit
+    end
+  end
+
+  get '/comment/:id' do |post_id|
+    @post = Post.get(post_id)
+    if @post && session[:admin_id]
+      @posts = Post.all
+      @comments = Comment.all
+      erb :commentadmin
+    else
+      @posts = Post.all
+      @comments = Comment.all
+      erb :comment
     end
   end
 
@@ -99,6 +122,19 @@ class App < Sinatra::Base
       redirect '/adminrights'
     else
       redirect '/admin'
+    end
+  end
+
+  post '/comment/:id/comment' do |post_id|
+    @post = Post.get(post_id)
+    if @post
+      email = params['email']
+      name = params['name']
+      content = params['content']
+      Comment.create(email: email, name: name, content: content, post: @post)
+      redirect back
+    else
+      redirect '/'
     end
   end
 

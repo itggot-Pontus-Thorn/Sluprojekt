@@ -48,6 +48,16 @@ div.collage.mdl-button {
     width: 650px;
 }
 
+.comment-content {
+    border: solid black 1px;
+    height: 170px;
+    width: 650px;
+}
+
+ul.comment-list li:hover {
+    background-color: transparent;
+}
+
 div.mdl-layout__header-row {
     padding-left: 0;
 }
@@ -65,9 +75,17 @@ ul {
     padding: 0;
 }
 
-ul li {display: inline-block;}
-ul li:hover {background: #34495e;}
-ul li:hover ul {display: block;}
+ul li {
+    display: inline-block;
+}
+
+ul li:hover {
+    background: #34495e;
+}
+
+ul li:hover ul {
+    display: block;
+}
 
 ul li ul {
     position: absolute;

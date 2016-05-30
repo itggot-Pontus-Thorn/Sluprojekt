@@ -3,5 +3,5 @@ class Visitor
 
   property :id, Serial
 
-  has n, :comments
+  # has n, :comments
 end

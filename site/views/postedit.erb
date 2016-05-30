@@ -11,7 +11,10 @@
       REMOVE POST
     </button>
   </form>
+  <div class="inlägg">
   <h4><%= @post.title %></h4>
-  <p id="content"><%= @post.content %></p>
+  <h6><%= @post.category %></h6>
+  <p class="content"><%= @post.content %></p>
+  </div>
 </div>
 

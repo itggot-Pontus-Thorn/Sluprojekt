@@ -7,5 +7,5 @@ class Comment
   property :content, Text, required: true
 
   belongs_to :post
-  belongs_to :visitor
+  # belongs_to :visitor
 end

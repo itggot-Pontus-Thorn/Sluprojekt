@@ -8,7 +8,7 @@
           <li>
             <a class="mdl-navigation__link" id="category">CATEGORIES</a>
             <ul>
-              <li><a href="/adminrights?=action">ACTION</a></li>
+              <li><a href="#">ACTION</a></li>
               <li><a href="#">ROMANCE</a></li>
               <li><a href="#">AIDS</a></li>
             </ul>
@@ -55,22 +55,39 @@
   </form>
 </div>
 
+<div class="inlägg">
+  <h4><%= @post.title %></h4>
+  <h6><%= @post.category %></h6>
+  <p class="content"><%= @post.content %></p>
+</div>
 
-
-<% for post in @posts.sort_by{|p| p.created_at}.reverse%>
-    <div class="inlägg">
-      <form action="/post/<%= post.id %>/edit" method="get">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-          EDIT
-        </button>
-      </form>
-      <h4><%= post.title %></h4>
-      <h6><%= post.category %></h6>
-      <p class="content"><%= post.content %></p>
-      <form action="/comment/<%= post.id %>" method="get">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        COMMENT
-      </button>
-      </form>
-    </div>
+<% for comment in @post.comments %>
+   <div class="comment">
+    <ul class="demo-list-three mdl-list comment-list">
+      <li class="mdl-list__item mdl-list__item--three-line">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-avatar">person</i>
+      <span><%= comment.name %></span>
+      <span class="mdl-list__item-text-body">
+        <%= comment.content %>
+      </span>
+    </span>
+      </li>
+    </ul>
+   </div>
 <% end %>
+
+<div id="comment">
+  <h4>COMMENT</h4>
+  <form action="/comment/<%= @post.id %>/comment" method="post">
+    <input type="text" name="email" placeholder="EMAIL*">
+    <input type="text" name="name" placeholder="NAME*">
+    <div class="mdl-textfield mdl-js-textfield">
+      <textarea class="mdl-textfield__input" type="text" rows= "3" id="content" name="content"></textarea>
+      <label class="mdl-textfield__label" for="content">CONTENT</label>
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      COMMENT
+    </button>
+  </form>
+</div>
