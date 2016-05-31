@@ -15,7 +15,6 @@ class App < Sinatra::Base
   end
 
   get '/adminrights?=:query' do |query|
-    #puts "\n\n" + query + "\n\n"
     if session[:admin_id]
       @posts = Post.all.select{|post| post.category.scan(/#{query}/i).length > 0}
       erb :admin

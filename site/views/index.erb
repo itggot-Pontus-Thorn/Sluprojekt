@@ -45,8 +45,8 @@
   <img src="/img/collage.png">
 </div>
 
-<div class="inlägg">
   <% for post in @posts.sort_by{|p| p.created_at}.reverse%>
+    <div class="inlägg">
       <h4><%= post.title %></h4>
       <h6><%= post.category %></h6>
       <p class="content"><%= post.content %></p>
@@ -55,5 +55,6 @@
           COMMENT
         </button>
       </form>
+    </div>
   <% end %>
-</div>
+
