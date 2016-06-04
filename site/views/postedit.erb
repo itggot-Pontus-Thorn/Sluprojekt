@@ -1,7 +1,7 @@
 <div>
   <form action="/post/<%= @post.id %>/edit" method="post">
-  <input type="text" name="title" placeholder="TITLE">
-  <textarea name="content" placeholder="CONTENT"></textarea>
+    <input type="text" name="title" placeholder="TITLE">
+    <textarea name="content" placeholder="CONTENT"></textarea>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       EDIT
     </button>
@@ -12,9 +12,9 @@
     </button>
   </form>
   <div class="inlägg">
-  <h4><%= @post.title %></h4>
-  <h6><%= @post.category %></h6>
-  <p class="content"><%= @post.content %></p>
+    <h4><%= @post.title %></h4>
+    <h6><%= @post.category %></h6>
+    <p class="content"><%= @post.content %></p>
   </div>
 </div>
 

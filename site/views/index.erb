@@ -45,7 +45,7 @@
   <img src="/img/collage.png">
 </div>
 
-  <% for post in @posts.sort_by{|p| p.created_at}.reverse%>
+<% for post in @posts.sort_by { |p| p.created_at }.reverse %>
     <div class="inlägg">
       <h4><%= post.title %></h4>
       <h6><%= post.category %></h6>
@@ -56,5 +56,5 @@
         </button>
       </form>
     </div>
-  <% end %>
+<% end %>
 

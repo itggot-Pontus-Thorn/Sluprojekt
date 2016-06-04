@@ -67,9 +67,9 @@
 </div>
 
 <% for comment in @post.comments %>
-   <div class="comment">
-    <ul class="demo-list-three mdl-list comment-list">
-      <li class="mdl-list__item mdl-list__item--three-line">
+    <div class="comment">
+      <ul class="demo-list-three mdl-list comment-list">
+        <li class="mdl-list__item mdl-list__item--three-line">
     <span class="mdl-list__item-primary-content">
       <i class="material-icons mdl-list__item-avatar">person</i>
       <span><%= comment.name %></span>
@@ -77,9 +77,9 @@
         <%= comment.content %>
       </span>
     </span>
-      </li>
-    </ul>
-   </div>
+        </li>
+      </ul>
+    </div>
 <% end %>
 
 <div id="comment">
@@ -88,7 +88,7 @@
     <input type="text" name="email" placeholder="EMAIL*">
     <input type="text" name="name" placeholder="NAME*">
     <div class="mdl-textfield mdl-js-textfield">
-      <textarea class="mdl-textfield__input" type="text" rows= "3" id="content" name="content"></textarea>
+      <textarea class="mdl-textfield__input" type="text" rows="3" id="content" name="content"></textarea>
       <label class="mdl-textfield__label" for="content">CONTENT</label>
     </div>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

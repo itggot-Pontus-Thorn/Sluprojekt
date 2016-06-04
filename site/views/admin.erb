@@ -57,7 +57,7 @@
 
 
 
-<% for post in @posts.sort_by{|p| p.created_at}.reverse%>
+<% for post in @posts.sort_by { |p| p.created_at }.reverse %>
     <div class="inlägg">
       <form action="/post/<%= post.id %>/edit" method="get">
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
@@ -68,9 +68,9 @@
       <h6><%= post.category %></h6>
       <p class="content"><%= post.content %></p>
       <form action="/comment/<%= post.id %>" method="get">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        COMMENT
-      </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          COMMENT
+        </button>
       </form>
     </div>
 <% end %>

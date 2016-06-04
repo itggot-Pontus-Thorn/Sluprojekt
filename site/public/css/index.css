@@ -31,7 +31,7 @@ button.new {
     padding-top: 150px;
 }
 
-.inlägg > h4,h6 {
+.inlägg > h4, h6 {
     text-align: center;
 }
 
@@ -70,7 +70,7 @@ div a {
     text-decoration: none;
     color: white;
     padding: 15px;
-    display:inline-block;
+    display: inline-block;
 }
 
 ul {
@@ -103,7 +103,7 @@ ul li ul li {
 }
 
 ul li ul li a {
-    display:block !important;
+    display: block !important;
 }
 
 ul li ul li:hover {
@@ -118,9 +118,14 @@ span {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 #about {
     padding: 10px;
+}
+
+.about {
+    text-align: center;
+    padding-top: 80px;
 }
